@@ -6,12 +6,12 @@
  * Return: the length of the string.
  */
 
-int _printf(const char *format, ...)
+int _printf(const char * const format, ...)
 {
 	convert a[] = {
-		{"%s", printf_string}, {"%c", printf_char},
+		{"%s", print_string}, {"%c", print_char},
 		{"%%", print_37},
-		{"%i", printf_int}, {"%d", printf_deci}, 
+		{"%i", print_int}, {"%d", print_deci}, 
 		{"%r", print_string_reverse},
 		{"%R", print_rot13}, {"%b", print_binary},
 		{"%u", print_unsigned},
@@ -32,7 +32,7 @@ Here:
 		m = 13;
 		while (m >= 0)
 		{
-			if (a[m].integer[0] == format[k] && a[m].integer[1] == format[k + 1])
+			if (a[m].ph[0] == format[k] && a[m].ph[1] == format[k + 1])
 			{
 				length += a[m].function(args);
 				k = k + 2;
