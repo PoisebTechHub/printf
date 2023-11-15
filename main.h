@@ -6,8 +6,9 @@
 #include <unistd.h>
 #include <limits.h>
 
+
 /**
- * struct format - converter for printf
+ * struct format - converter for the function of printf
  * @ph: type char pointer of the specifier
  * @function: function for the conversion specifier
  *
@@ -25,7 +26,7 @@ int printf_char(va_list val);
 int printf_string(va_list val);
 int _strlen(char *str);
 int _strlencon(const char *str);
-int print_percent(void);
+int print_37(void);
 int printf_deci(va_list args);
 int printf_int(va_list args);
 int print_binary(va_list val);

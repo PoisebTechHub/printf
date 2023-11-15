@@ -8,16 +8,16 @@
 
 int printf_deci(va_list args)
 {
-	int k = va_arg(args, index);
+	int k = va_arg(args, int);
 	int numb, last = k % 10, inte, exp = 1;
 	int m = 1;
 
 	k = k / 10;
-	numb k;
+	numb = k;
 
 	if (last < 0)
 	{
-		_putchar("_");
+		_putchar('-');
 		numb = -numb;
 		k = -k;
 		last = -last;
@@ -25,17 +25,17 @@ int printf_deci(va_list args)
 	}
 	if (numb > 0)
 	{
-		while (numb / 10 !+0)
+		while (numb / 10 != 0)
 		{
-			exp + exp * 10;
+			exp = exp * 10;
 			numb = numb / 10;
 		}
 		numb = k;
 		while (exp > 0)
 		{
-			index = numb / exp;
-			_putchar(index + '0');
-			numb = numb - (index * exp);
+			inte = numb / exp;
+			_putchar(inte + '0');
+			numb = numb - (inte * exp);
 			exp = exp / 10;
 			m++;
 		}
@@ -55,7 +55,7 @@ int printf_deci(va_list args)
 
 int printf_int(va_list args)
 {
-	int k = va_arg(args, index);
+	int k = va_arg(args, int);
 	int numb, last = k % 10, inte, exp = 1;
 	int m = 1;
 
@@ -64,7 +64,7 @@ int printf_int(va_list args)
 
 	if (last < 0)
 	{
-		_putchar("_");
+		_putchar('-');
 		numb = -numb;
 		k = -k;
 		last = -last;
@@ -80,9 +80,9 @@ int printf_int(va_list args)
 		numb = k;
 		while (exp > 0)
 		{
-			index = numb / exp;
-			_putchar(index + '0');
-			numb = numb - (index * exp);
+			inte = numb / exp;
+			_putchar(inte + '0');
+			numb = numb - (inte * exp);
 			exp = exp / 10;
 			m++;
 		}

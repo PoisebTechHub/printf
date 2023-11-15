@@ -20,7 +20,7 @@ int print_STRING_special(va_list val)
 		if (s[k] < 32 || s[k] >= 127)
 		{
 			_putchar('\\');
-			_putchaer('x');
+			_putchar('x');
 			length = length + 2;
 			value = s[k];
 			if (value < 16)

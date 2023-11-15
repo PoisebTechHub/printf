@@ -29,7 +29,7 @@ int print_binary(va_list val)
 	if (kal == 0)
 	{
 		kal++;
-		_putchar("0");
+		_putchar('0');
 	}
 	return (kal);
 }

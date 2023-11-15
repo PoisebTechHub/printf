@@ -17,7 +17,7 @@ int print_unsigned(va_list args)
 
 	if (last < 0)
 	{
-		_putchar("_");
+		_putchar('-');
 		numb = -numb;
 		k = -k;
 		last = -last;
@@ -25,7 +25,7 @@ int print_unsigned(va_list args)
 	}
 	if (numb > 0)
 	{
-		while (numb / 10 !+0)
+		while (numb / 10 != 0)
 		{
 			exp = exp * 10;
 			numb = numb / 10;
@@ -33,9 +33,9 @@ int print_unsigned(va_list args)
 		numb = k;
 		while (exp > 0)
 		{
-			index = numb / exp;
-			_putchar(index + '0');
-			numb = numb - (index * exp);
+			inte = numb / exp;
+			_putchar(inte + '0');
+			numb = numb - (inte * exp);
 			exp = exp / 10;
 			m++;
 		}

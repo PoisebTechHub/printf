@@ -12,7 +12,7 @@ int printf_string(va_list val)
 	int k;
 	int length;
 
-	str = va arg(val, char *);
+	str = va_arg(val, char *);
 	if (str == NULL)
 	{
 		str = "(null)";

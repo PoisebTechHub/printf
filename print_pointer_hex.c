@@ -20,8 +20,6 @@ int print_pointer_hex(unsigned long int numb)
 	}
 	count++;
 	array = malloc(sizeof(long int) * count);
-	if (array == NULL)
-		return (NULL);
 	for (k = 0; k < count; k++)
 	{
 		array[k] = net % 16;

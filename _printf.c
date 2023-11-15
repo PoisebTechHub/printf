@@ -10,7 +10,7 @@ int _printf(const char * const format, ...)
 {
 	convert a[] = {
 		{"%s", printf_string}, {"%c", printf_char},
-		{"%%", print_percent},
+		{"%%", print_37},
 		{"%i", printf_int}, {"%d", printf_deci}, 
 		{"%r", print_string_reverse},
 		{"%R", print_rot13}, {"%b", print_binary},
