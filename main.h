@@ -6,18 +6,17 @@
 #include <unistd.h>
 #include <limits.h>
 
-
 /**
  * struct format - converter for the function of printf
- * @ph: type char pointer of the specifier
+ * @integer: type char pointer of the specifier
  * @function: function for the conversion specifier
  *
  */
 
 typedef struct format
 {
-	char *integer;
-	int (*function)();
+        char *integer;
+        int (*function)(va_list);
 } convert;
 
 int _putchar(char c);
@@ -39,7 +38,7 @@ int print_STRING_special(va_list val);
 int print_pointer(va_list val);
 int print_pointer_hex(unsigned long int numb);
 int print_string_reverse(va_list args);
-int print_rot13(va_list args)i;
-int *_strcpy(char *dest, char *src);
+int print_rot13(va_list args);
+char *_strcpy(char *dest, char *src);
 
 #endif
