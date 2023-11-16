@@ -16,7 +16,7 @@
 typedef struct format
 {
 	char *integer;
-	int (*function)(va_list);
+	int (*function)();
 } convert;
 
 int _putchar(char c);
@@ -34,11 +34,10 @@ int print_octal(va_list val);
 int print_hex(va_list val);
 int print_HEX(va_list val);
 int print_STRING_HEX(unsigned int numb);
-int print_STRING_special(va_list val);
+int print_STRING_special(va_list val)`;
 int print_pointer(va_list val);
 int print_pointer_hex(unsigned long int numb);
 int print_string_reverse(va_list args);
-int print_rot13(va_list args);
-int *_strcpy(char *dest, char *src);
+int print_rot13(va_list args)i;
 
 #endif
