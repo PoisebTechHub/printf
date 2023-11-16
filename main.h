@@ -15,8 +15,8 @@
 
 typedef struct format
 {
-        char *integer;
-        int (*function)(va_list);
+	char *integer;
+	int (*function)(va_list);
 } convert;
 
 int _putchar(char c);
