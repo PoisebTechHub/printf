@@ -39,6 +39,8 @@ int print_STRING_special(va_list val);
 int print_pointer(va_list val);
 int print_pointer_hex(unsigned long int numb);
 int print_string_reverse(va_list args);
-int print_rot13(va_list args);
+int print_rot13(va_list args)i;
+int *_strcpy(char *dest, char *src);
+int rev_string(char *str);
 
 #endif

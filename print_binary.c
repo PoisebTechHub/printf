@@ -16,7 +16,7 @@ int print_binary(va_list val)
 
 	for (k = 0; k < 32; k++)
 	{
-		h = ((n << (32 - k)) & numb);
+		h = ((n << (31 - k)) & numb);
 		if (h >> (31 - k))
 			dex = 1;
 		if (dex)
