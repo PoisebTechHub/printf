@@ -19,34 +19,36 @@
 #define S_SHORT 1
 
 /**
- * struct fmt - Struct op
+ * struct format - Struct op
  *
- * @fmt: The format.
+ * @format: The format.
  * @fn: The function associated.
  */
-struct fmt
+
+struct format
 {
-	char fmt;
+	char format;
 	int (*fn)(va_list, char[], int, int, int, int);
 };
 
 
 /**
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct format format_t - Struct op
  *
- * @fmt: The format.
- * @fm_t: The function associated.
+ * @format: The format.
+ * @forma_t: The function associated.
  */
-typedef struct fmt fmt_t;
+
+typedef struct format format_t;
 
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
+int handle_team_print(const char *format, int *k,
 va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /****************** FUNCTIONS ******************/
 
 /* Funtions to print chars and strings */
-int print_char(va_list types, char buffer[],
+int print_characters(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -54,7 +56,7 @@ int print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Functions to print numbers */
-int print_int(va_list types, char buffer[],
+int print_integer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -62,12 +64,12 @@ int print_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexadecimal(va_list types, char buffer[],
+int print_hexadecimal(va_list types, char buffeir[],
 	int flags, int width, int precision, int size);
-int print_hexa_upper(va_list types, char buffer[],
+int print_HEX_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-int print_hexa(va_list types, char map_to[],
+int print_hex(va_list types, char map[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
 /* Function to print non printable characters */
@@ -75,44 +77,43 @@ int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Funcion to print memory address */
-int print_pointer(va_list types, char buffer[],
+int team_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Funciotns to handle other specifiers */
-int get_flags(const char *format, int *i);
-int get_width(const char *format, int *i, va_list list);
-int get_precision(const char *format, int *i, va_list list);
-int get_size(const char *format, int *i);
+int flag_functions(const char *format, int *k);
+int functions_width(const char *format, int *k, va_list list);
+int functions_precision(const char *format, int *k, va_list list);
+int cast_size(const char *format, int *k);
 
 /*Function to print string in reverse*/
-int print_reverse(va_list types, char buffer[],
+int print_reverse_string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Function to print a string in rot 13*/
-int print_rot13string(va_list types, char buffer[],
+int print_rot13(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* width handler */
-int handle_write_char(char c, char buffer[],
+int handle_print_char(char q, char buffer[],
 	int flags, int width, int precision, int size);
-int write_number(int is_positive, int ind, char buffer[],
+int print_strnum(int num_negative, int index, char buffer[],
 	int flags, int width, int precision, int size);
-int write_num(int ind, char bff[], int flags, int width, int precision,
-	int length, char padd, char extra_c);
-int write_pointer(char buffer[], int ind, int length,
-	int width, int flags, char padd, char extra_c, int padd_start);
+int create_number(int index, char buffer[], int flags, int width, int precision,
+	int length, char padd, char add_q);
+int create_pointer(char buffer[], int index, int length,
+	int width, int flags, char padd, char add_q, int padd_start);
 
-int write_unsgnd(int is_negative, int ind,
-char buffer[],
+int create_unsigned(int num_negative, int index, char buffer[],
 	int flags, int width, int precision, int size);
 
 /****************** UTILS ******************/
-int is_printable(char);
-int append_hexa_code(char, char[], int);
-int is_digit(char);
+int team_printable(char);
+int append_hex_code(char, char[], int);
+int our_digit(char);
 
-long int convert_size_number(long int num, int size);
-long int convert_size_unsgnd(unsigned long int num, int size);
+long int cast_size_integer(long int numb, int size);
+long int cast_size_unsigned(unsigned long int numb, int size);
 
 #endif
 
