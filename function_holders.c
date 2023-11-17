@@ -90,27 +90,24 @@ int print_strnum(int num_negative, int index, char buffer[],
  * @buffer: Buffer
  * @flags: Flags
  * @width: width
- * @precision: Precision specifier
+ * @prec: Precision specifier
  * @length: Number length
  * @padd: Pading character
  * @add_q: Extra character
- *
  * Return: Number of created characters
  */
-
-int create_number(int index, char buffer[],
-	int flags, int width, int precision,
-	int length, char padd, char add_q)
+int create_number(int index, char buffer[], int flags, int width,
+	int prec, int length, char padd, char add_q)
 {
 	int k, padd_start = 1;
 
-	if (precision == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0' && width == 0)
-		return (0); /* printf(".0d", 0)  no char is printed */
-	if (precision == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
+	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0' && width == 0)
+		return (0);
+	if (prec == 0 && index == BUFF_SIZE - 2 && buffer[index] == '0')
 		buffer[index] = padd = ' ';
-	if (precision > 0 && precision < length)
+	if (prec > 0 && prec < length)
 		padd = ' ';
-	while (precision > length)
+	while (prec > length)
 		buffer[--index] = '0', length++;
 	if (add_q != 0)
 		length++;
@@ -157,7 +154,7 @@ int create_number(int index, char buffer[],
  * Return: Number of created characters
  */
 
-int create_unsigned(int num_negative, int index,
+int create_unsigned_int(int num_negative, int index,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {

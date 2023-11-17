@@ -12,14 +12,14 @@
  * Return: 1 or 2;
  */
 
-int handle_team_print(const char *format, int *index, va_list list, char buffer[],
-	int flags, int width, int precision, int size)
+int handle_team_print(const char *format, int *index, va_list list,
+	char buffer[], int flags, int width, int precision, int size)
 {
 	int k, unknown_length = 0, printed_chars = -1;
 	format_t format_types[] = {
 		{'c', print_characters}, {'s', print_string}, {'%', print_percent},
 		{'i', print_integer}, {'d', print_integer}, {'b', print_binary},
-		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
+		{'u', print_unsigned_int}, {'o', print_octal}, {'x', print_hexadecimal},
 		{'X', print_HEX_upper}, {'p', team_pointer}, {'S', print_non_printable},
 		{'r', print_reverse_string}, {'R', print_rot13}, {'\0', NULL}
 	};

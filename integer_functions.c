@@ -12,13 +12,13 @@
  * Return: Number of characters printed.
  */
 
-int print_unsigned(va_list types, char buffer[],
+int print_unsigned_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int k = BUFF_SIZE - 2;
 	unsigned long int numb = va_arg(types, unsigned long int);
 
-	numb = cast_size_unsigned(numb, size);
+	numb = cast_size_unsigned_int(numb, size);
 
 	if (numb == 0)
 		buffer[k--] = '0';
@@ -33,7 +33,7 @@ int print_unsigned(va_list types, char buffer[],
 
 	k++;
 
-	return (create_unsigned(0, k, buffer, flags, width, precision, size));
+	return (create_unsigned_int(0, k, buffer, flags, width, precision, size));
 }
 
 
@@ -59,7 +59,7 @@ int print_octal(va_list types, char buffer[],
 
 	UNUSED(width);
 
-	numb = cast_size_unsigned(numb, size);
+	numb = cast_size_unsigned_int(numb, size);
 
 	if (numb == 0)
 		buffer[k--] = '0';
@@ -77,7 +77,7 @@ int print_octal(va_list types, char buffer[],
 
 	k++;
 
-	return (create_unsigned(0, k, buffer, flags, width, precision, size));
+	return (create_unsigned_int(0, k, buffer, flags, width, precision, size));
 }
 
 
@@ -146,7 +146,7 @@ int print_hex(va_list types, char map[], char buffer[],
 
 	UNUSED(width);
 
-	numb = cast_size_unsigned(numb, size);
+	numb = cast_size_unsigned_int(numb, size);
 
 	if (numb == 0)
 		buffer[k--] = '0';
@@ -167,6 +167,6 @@ int print_hex(va_list types, char map[], char buffer[],
 
 	k++;
 
-	return (create_unsigned(0, k, buffer, flags, width, precision, size));
+	return (create_unsigned_int(0, k, buffer, flags, width, precision, size));
 }
 

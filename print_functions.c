@@ -16,7 +16,7 @@ int team_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char add_q = 0, padd = ' ';
-	int index = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
+	int index = BUFF_SIZE - 2, length = 2, padd_start = 1;
 	unsigned long numb_address;
 	char map[] = "0123456789abcdef";
 	void *address = va_arg(types, void *);

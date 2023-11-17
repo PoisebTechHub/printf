@@ -90,7 +90,7 @@ long int cast_size_integer(long int numb, int size)
  * Return: Casted value of integer
  */
 
-long int cast_size_unsigned(unsigned long int numb, int size)
+long int cast_size_unsigned_int(unsigned long int numb, int size)
 {
 	if (size == S_LONG)
 		return (numb);

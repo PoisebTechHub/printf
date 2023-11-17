@@ -60,7 +60,7 @@ int print_integer(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_unsigned(va_list types, char buffer[],
+int print_unsigned_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -99,12 +99,12 @@ int handle_print_char(char q, char buffer[],
 	int flags, int width, int precision, int size);
 int print_strnum(int num_negative, int index, char buffer[],
 	int flags, int width, int precision, int size);
-int create_number(int index, char buffer[], int flags, int width, int precision,
-	int length, char padd, char add_q);
+int create_number(int index, char buffer[], int flags, int width,
+	int prec, int length, char padd, char add_q);
 int create_pointer(char buffer[], int index, int length,
 	int width, int flags, char padd, char add_q, int padd_start);
 
-int create_unsigned(int num_negative, int index, char buffer[],
+int create_unsigned_int(int num_negative, int index, char buffer[],
 	int flags, int width, int precision, int size);
 
 /****************** UTILS ******************/
@@ -113,7 +113,7 @@ int append_hex_code(char, char[], int);
 int our_digit(char);
 
 long int cast_size_integer(long int numb, int size);
-long int cast_size_unsigned(unsigned long int numb, int size);
+long int cast_size_unsigned_int(unsigned long int numb, int size);
 
 #endif
 
