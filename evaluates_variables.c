@@ -83,7 +83,7 @@ long int cast_size_integer(long int numb, int size)
 
 
 /**
- * cast_size_unsigned - casts an unsigned integer to specific size
+ * cast_size_unsigned_int - casts an unsigned integer to specific size
  * @numb: unsigned integers to be casted
  * @size: size of integers to be casted
  *
